@@ -27,10 +27,9 @@
         //mandar mensaje de datos guardados
         $resultado = mysqli_query($conexion, $sql);
         if (!$resultado) {
-            echo "error"
             echo "ERROR! $sql".mysqli_error($conexion);
         } else {
-            echo "<h3>Datos almacenados correctamente. Revisar MYSQL para cotejar registros. y actualizar de ser necesario</h3>";
+            //echo "<h3>Datos almacenados correctamente. Revisar MYSQL para cotejar registros. y actualizar de ser necesario</h3>";
             include('verDatos.php');
         }
         //cerrar conexion
