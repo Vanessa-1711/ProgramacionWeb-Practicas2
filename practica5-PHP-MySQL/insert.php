@@ -8,11 +8,16 @@
     <!-- Theme style -->
 </head>
 <body>
-    <h1>SAL ALGOOOO</h1>
     <?php
         //conexion a ala base de datos 
         //nombre del servidor + nombre de usuario+contraseña + nombre de la base de datos
-        $conexion=mysqli_connect("167.172.159.60", "admin", "5b8fc2b6176a8d1939f4b08c5724480d374f9b1603c1d563","formularios");
+        $servername = "localhost";
+        $username = "debian-sys-maint";
+        $password = "9855384e1e0d7de56f040b8caefb9449bdb3297ab10fcd24";
+        $dbname = "formularios";
+
+        // Crear conexion a la base de datos
+        $conexion = mysqli_connect($servername, $username, $password,$dbname);
         // revisar conexion
         if($conexion==false){
             die("Error no existe una conexion a la base de datos".mysqli_connect_error());
