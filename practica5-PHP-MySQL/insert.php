@@ -14,7 +14,7 @@
         $servername = "localhost";
         $username = "debian-sys-maint";
         $password = "9855384e1e0d7de56f040b8caefb9449bdb3297ab10fcd24";
-        $dbname = "formularios";
+        $dbname = "productos";
 
         // Crear conexion a la base de datos
         $conexion = mysqli_connect($servername, $username, $password,$dbname);
