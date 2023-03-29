@@ -1,12 +1,3 @@
-<?php
-    $con = mysqli_connect("localhost", "root", "", "formularios");
-    $resultado = mysqli_query($con, "SELECT * FROM categoria");
-    $categorias = array();
-    while ($fila = mysqli_fetch_array($resultado)) {
-        $categorias[] = $fila['nombre_categoria'];
-    }
-                        
-?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
