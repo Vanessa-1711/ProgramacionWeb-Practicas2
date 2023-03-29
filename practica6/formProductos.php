@@ -153,36 +153,34 @@
                     
                     <!-- apartado de Ingresar categoria -->
                     <div class="form-group" id="categoriadiv">
-                    <label for="categoria">Categoría <span class="obligatorio">(*)</span></label>
-                        <select class="form-select m-2 input" name="categoria" id="categoria" aria-describedby="datosw" required>
-                          <option value="">Elige</option>
-                          <?php
-                            $servername = "localhost";
-                            $username = "debian-sys-maint";
-                            $password = "9855384e1e0d7de56f040b8caefb9449bdb3297ab10fcd24";
-                            $dbname = "formularios";
-                    
-                            // Crear conexion a la base de datos
-                            $conexion = mysqli_connect($servername, $username, $password,$dbname);
-                            // revisar conexion
-                            if($conexion==false){
-                                die("Error no existe una conexion a la base de datos".mysqli_connect_error());
+                      <label for="categoria">Categoría <span class="obligatorio">(*)</span></label>
+                          <select class="form-select m-2 input" name="categoria" id="categoria" aria-describedby="datosw" required>
+                            <option value="">Elige</option>
+                            <?php
+                              $servername = "localhost";
+                              $username = "debian-sys-maint";
+                              $password = "9855384e1e0d7de56f040b8caefb9449bdb3297ab10fcd24";
+                              $dbname = "formularios";
+                      
+                              // Crear conexion a la base de datos
+                              $conexion = mysqli_connect($servername, $username, $password,$dbname);
+                              // revisar conexion
+                              if($conexion==false){
+                                  die("Error no existe una conexion a la base de datos".mysqli_connect_error());
+                              }
+                              // Ejecutar la consulta SQL
+                              $resultado = mysqli_query($conexion, "SELECT nombre_categoria FROM categoria");
+                              while ($fila = mysqli_fetch_assoc($resultado)) {
+                                echo "<option value='".$fila["nombre_categoria"]."'>".$fila["nombre_categoria"]."</option>";
                             }
-                            // Ejecutar la consulta SQL
-                            $resultado = mysqli_query($con, "SELECT nombre_categoria FROM categoria");
-                             while ($fila = mysqli_fetch_assoc($resultado)) {
-                              echo "<option value='".$fila["nombre_categoria"]."'>".$fila["nombre_categoria"]."</option>";
-                          }
 
-                          // Cerrar la conexión
-                          mysqli_close($con);
-                          ?>
-                        </select>
-
-
-                      <div id="datosw" class="invalid-feedback">
-                        Los datos son obligatorios
-                      </div>
+                            // Cerrar la conexión
+                            mysqli_close($conexion);
+                            ?>
+                          </select>
+                        <div id="datosw" class="invalid-feedback">
+                          Los datos son obligatorios
+                        </div>
                     </div>
 
                   <!-- apartado de Ingresar precio venta -->
