@@ -156,7 +156,6 @@
             
                         //tomar los valores del fromulario a traves de los datos de los campos
                         if (isset($_POST['nombre'], $_POST['precioven'], $_POST['precioComp'])){
-                          echo("entre");
                             $nombre=$_POST['nombre'];
                             $precio_venta=$_POST['precioven'];
                             $precio_compra=$_POST['precioComp'];
@@ -164,16 +163,16 @@
                             
                             //Ejecutar el Query de insercion de datos
                             $sql="INSERT INTO productos (nombre_producto,precio_venta,precio_compra,id_categoria) VALUES ('$nombre','$precio_venta',' $precio_compra', (SELECT id_categoria FROM categoria WHERE nombre_categoria = '$categoria'))";
-                            $resultado=mysqli_query($con,$sql);
+                            $resultado=mysqli_query($conexion,$sql);
                             //mandar mensaje de datos guardados
                             if ($resultado) {
                                 echo "<h3>Datos almacenados correctamente.</h3>";
                             }else{
-                                echo "ERROR!".mysqli_error($con);
+                                echo "ERROR!".mysqli_error($conexion);
                             }
                         }
                         // Ejecutar la consulta SQL
-                        $resultado = mysqli_query($con, "SELECT productos.*, categoria.nombre_categoria AS nombre_categoria FROM productos JOIN categoria ON productos.id_categoria = categoria.id_categoria");
+                        $resultado = mysqli_query($conexion, "SELECT productos.*, categoria.nombre_categoria AS nombre_categoria FROM productos JOIN categoria ON productos.id_categoria = categoria.id_categoria");
 
                         // Mostrar los resultados en una tabla HTML
                         while ($fila = mysqli_fetch_assoc($resultado)) {
@@ -187,7 +186,7 @@
                         }
 
                             // Cerrar la conexión
-                            mysqli_close($con);
+                            mysqli_close($conexion);
 
                             ?>
                         <!-- Agrega más filas aquí -->
