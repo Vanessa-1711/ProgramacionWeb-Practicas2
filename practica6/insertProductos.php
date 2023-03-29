@@ -26,10 +26,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="dasboard.php" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="index.html" class="nav-link">Exit</a>
+          <a href="index.php" class="nav-link">Home</a>
         </li>
       </ul>
   
@@ -47,7 +44,7 @@
             <li class="nav-item menu-open">
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="dasboard.php" class="nav-link active">
+                  <a href="index.php" class="nav-link active">
                       <i class="fa-solid fa-house"></i>
                       <p>HOME</p>
                   </a>
